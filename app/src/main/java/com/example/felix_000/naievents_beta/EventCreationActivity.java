@@ -3,6 +3,7 @@ package com.example.felix_000.naievents_beta;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.AppCompatEditText;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,23 +24,23 @@ private Button button;
         setContentView(R.layout.activity_event_creation);
         // Enable Crash Reporting
         ParseCrashReporting.enable(this);
-//Enable Local Datastore
+//Enable Local Datastores
         Parse.enableLocalDatastore(this);
         Parse.initialize(this, "yKTdQtjm9QjPKlym7zVFjJrXjbmAX5EncrgUZCbV", "pMSZxLIDpkcgqxIiTYAM1Ybh58uGesRKt5N1nXHf");
     }
    public void addEvent(View view){
        ParseObject event = new ParseObject("EventsData");
   EditText date = (EditText) findViewById(R.id.date);
-       date.getText();
-       event.put("Date", date.toString());
-       EditText title = (EditText) findViewById(R.id.title);
-       title.getText();
-       event.put("Title", title.toString());
-       EditText location = (EditText) findViewById(R.id.location);
-       location.getText();
-       event.put("Location", location.toString());
-       event.saveInBackground();
 
+       event.put("Date", date.getText().toString());
+       EditText title = (EditText) findViewById(R.id.title);
+
+       event.put("Title", title.getText().toString());
+       EditText location = (EditText) findViewById(R.id.location);
+
+       event.put("Location", location.getText().toString());
+       Log.v("Check Value", date.getText().toString());
+        event.saveInBackground();
    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
