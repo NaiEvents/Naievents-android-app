@@ -23,7 +23,7 @@ private Button button;
         setContentView(R.layout.activity_event_creation);
         // Enable Crash Reporting
         ParseCrashReporting.enable(this);
-//Enable Local Datastore
+//Enable Local Datastores
         Parse.enableLocalDatastore(this);
         Parse.initialize(this, "yKTdQtjm9QjPKlym7zVFjJrXjbmAX5EncrgUZCbV", "pMSZxLIDpkcgqxIiTYAM1Ybh58uGesRKt5N1nXHf");
     }
