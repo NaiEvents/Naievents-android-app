@@ -1,6 +1,7 @@
 package com.example.felix_000.naievents_beta;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,6 +13,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+
+import com.parse.Parse;
+import com.parse.ParseObject;
 
 
 public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -27,6 +32,13 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+        //Enable Local Datastore
+        Parse.enableLocalDatastore(this);
+        Parse.initialize(this, "yKTdQtjm9QjPKlym7zVFjJrXjbmAX5EncrgUZCbV", "pMSZxLIDpkcgqxIiTYAM1Ybh58uGesRKt5N1nXHf");
+        ParseObject testObject = new ParseObject("TestObject");
+        testObject.put("foo", "bar");
+        testObject.saveInBackground();
+
     }
 
     @Override
@@ -135,6 +147,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
                     rootView = inflater.inflate(R.layout.fragment_technology, container, false);
                     break;
             }
+
             return rootView;
         }
 
@@ -149,14 +162,14 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         {
 
             super.onViewCreated(view, savedInstanceState);
-          //  ImageView imageView = (ImageView) view.findViewById(R.id.createProduct);
-           // imageView.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Intent intent = new Intent(getActivity().getApplicationContext(), Create.class);
-//                    startActivity(intent);
-//                }
-//            });
+            ImageView imageView = (ImageView) view.findViewById(R.id.addEvent);
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getActivity().getApplicationContext(), EventCreationActivity.class);
+                    startActivity(intent);
+                }
+            });
 
         }
     }
