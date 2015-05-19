@@ -10,16 +10,20 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/linearLayout2">
-
         <EditText
+            android:id="@+id/fromdate"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:hint="Date"
-            android:ems="10"
+            android:layout_weight=".5"
+            android:hint="@string/from_date" />
 
-            android:id="@+id/date"
-            android:layout_weight="38.58"/>
+        <EditText
+            android:id="@+id/todate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:hint="@string/to_date" />
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="fill_parent"
@@ -60,14 +64,12 @@
     </LinearLayout>
 
 
-<Button
-android:layout_width="wrap_content"
-android:layout_height="50dp"
-android:text="Save"
-android:background="#0288D1"
-android:id="@+id/add"
-android:textColor="#ffffff"
-android:onClick="addEvent"
+        <Button
+      android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Save"
+     android:background="#0288D1"
+     android:id="@+id/add" android:textColor="#ffffff"
     android:layout_alignParentBottom="true"
     android:layout_alignRight="@+id/linearLayout"
     android:layout_alignEnd="@+id/linearLayout"
@@ -79,7 +81,7 @@ android:onClick="addEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="CANCEL"
-        android:background="#0288D1"
+        android:background="#ffe82c29"
         android:id="@+id/cancel"
         android:textColor="#ffffff"
         android:layout_alignTop="@+id/add"
@@ -99,6 +101,19 @@ android:onClick="addEvent"
         android:layout_marginTop="31dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
-
+    <Button
+        android:id="@+id/btnUpload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/btn_bg"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="@string/btnUploadToServer"
+        android:textColor="@color/white"
+        android:layout_below="@+id/location"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="51dp" />
 
 </RelativeLayout>
