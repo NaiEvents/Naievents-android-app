@@ -2,6 +2,7 @@ package com.example.felix_000.naievents_beta;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import java.util.List;
 /**
  * Created by festus on 5/19/15.
  */
+/*
 class   RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> {
 
     List<EventsFormAtt> eventsFormAtts;
@@ -52,6 +54,7 @@ class   RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> {
 
     @Override
     public void onBindViewHolder(RVAdapter.PersonViewHolder personViewHolder, int i) {
+        Log.v("value of",eventsFormAtts.get(i).title);
         personViewHolder.title.setText(eventsFormAtts.get(i).title);
         personViewHolder.date.setText(eventsFormAtts.get(i).date);
         personViewHolder.location.setText(eventsFormAtts.get(i).location);
@@ -63,4 +66,5 @@ class   RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> {
         return 0;
     }
 }
+*/
 

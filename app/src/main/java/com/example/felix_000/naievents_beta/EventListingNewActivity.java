@@ -15,7 +15,7 @@ public class EventListingNewActivity extends ActionBarActivity {
     private ArrayList<EventsFormAtt> eventsFormAtts;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        /*super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_listing_new);
         rv = (RecyclerView) findViewById(R.id.rv);
         rv.setHasFixedSize(true);
@@ -61,5 +61,5 @@ public class EventListingNewActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-}
+    }*/
+    }}
