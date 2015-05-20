@@ -5,8 +5,10 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
+import com.daimajia.slider.library.SliderTypes.TextSliderView;
 
 import java.util.HashMap;
 
@@ -25,6 +27,26 @@ public class FeaturedEventsActivity extends ActionBarActivity implements BaseSli
         file_maps.put("venue:KICC  date:10/10/2015", R.drawable.bussiness);
         file_maps.put("venue:Nyayo Stadium  date:8/3/2015 ", R.drawable.saflive);
         file_maps.put("venue:KRFUA date:8/3/2015 ", R.drawable.sports);
+
+        for(String name : file_maps.keySet()) {
+            TextSliderView textSliderView = new TextSliderView(this);
+            // initialize a SliderLayout
+            textSliderView
+                    .description(name)
+                    .image(file_maps.get(name))
+                    .setScaleType(BaseSliderView.ScaleType.Fit)
+                    .setOnSliderClickListener(this);
+
+            //add your extra information
+            textSliderView.getBundle()
+                    .putString("extra", name);
+
+            myslider.addSlider(textSliderView);
+        }
+        myslider.setPresetTransformer(SliderLayout.Transformer.Accordion);
+        myslider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
+        myslider.setCustomAnimation(new DescriptionAnimation());
+        myslider.setDuration(3000);
 
     }
 

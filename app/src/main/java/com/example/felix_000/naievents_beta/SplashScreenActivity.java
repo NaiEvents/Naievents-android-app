@@ -17,7 +17,7 @@ public class SplashScreenActivity extends ActionBarActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(SplashScreenActivity.this, EventListingActivity.class);
+                Intent i = new Intent(SplashScreenActivity.this, FeaturedEventsActivity.class);
                 startActivity(i);
 
                 this.finish();
