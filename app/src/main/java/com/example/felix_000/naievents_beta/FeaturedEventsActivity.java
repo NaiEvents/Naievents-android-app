@@ -5,13 +5,27 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.daimajia.slider.library.SliderLayout;
+import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 
-public class FeaturedEventsActivity extends ActionBarActivity {
+import java.util.HashMap;
 
+
+public class FeaturedEventsActivity extends ActionBarActivity implements BaseSliderView.OnSliderClickListener {
+    private SliderLayout myslider;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_featured_events);
+        myslider = (SliderLayout)findViewById(R.id.slider);
+
+        HashMap<String,Integer> file_maps = new HashMap<String, Integer>();
+        file_maps.put("venue:KICC  date:8/3/2015", R.drawable.grooveimg);
+        file_maps.put("Barcelona  date:4/5/2015", R.drawable.rubyconf);
+        file_maps.put("venue:KICC  date:10/10/2015", R.drawable.bussiness);
+        file_maps.put("venue:Nyayo Stadium  date:8/3/2015 ", R.drawable.saflive);
+        file_maps.put("venue:KRFUA date:8/3/2015 ", R.drawable.sports);
+
     }
 
     @Override
@@ -34,5 +48,10 @@ public class FeaturedEventsActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onSliderClick(BaseSliderView baseSliderView) {
+
     }
 }
